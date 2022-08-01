@@ -1,6 +1,6 @@
 import 'components.dart';
+import '../models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:fooderlich/models/models.dart';
 
 class FriendsPostTitle extends StatelessWidget {
   final Post post;
