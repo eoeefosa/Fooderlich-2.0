@@ -6,7 +6,7 @@ import 'package:fooderlich/models/models.dart';
 
 class TodayRecipeListView extends StatelessWidget {
   // TodayRecipeListView needs a list of recipes to display.
-  final List<ExploreRecipe> recipes;
+  final List<ExploreRecipe>? recipes;
   const TodayRecipeListView({Key? key, required this.recipes})
       : super(key: key);
   @override
@@ -26,12 +26,41 @@ class TodayRecipeListView extends StatelessWidget {
           // 7
           Container(
             height: 400,
-            // TODO: Add ListView Here
-            color: Colors.grey,
-          )
+            // changes the color from grey to transparent
+            color: Colors.transparent,
+            // creates a listview.seperated. remember this widget creates
+            //2 indexedwidgetbuilders
+            child: ListView.separated(
+                // sets the scroll direction to the horizontal axis
+                scrollDirection: Axis.horizontal,
+                // sets the number of items in the list view
+                itemCount: recipes!.length,
+                // creates an item builder callback. which will go through
+                //everytime in the list
+                itemBuilder: (context, index) {
+                  // gets the recipe for the current index and builds the card
+                  final recipe = recipes![index];
+                  return buildCard(recipe);
+                },
+// creates a seperatorbuilder callback, which will go through every item in
+                separatorBuilder: (context, index) {
+                  return const SizedBox(width: 16);
+                }),
+          ),
         ],
       ),
     );
   }
-  // TODO: Add buildCard() widget here
+
+  Widget buildCard(ExploreRecipe recipe) {
+    if (recipe.cardType == RecipeCardType.card1) {
+      return Card1(recipe: recipe);
+    } else if (recipe.cardType == RecipeCardType.card2) {
+      return Card2(recipe: recipe);
+    } else if (recipe.cardType == RecipeCardType.card3) {
+      return Card3(recipe: recipe);
+    } else {
+      throw Exception('this card doesn\'t exist');
+    }
+  }
 }
