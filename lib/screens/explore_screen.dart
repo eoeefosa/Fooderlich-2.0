@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/components/components.dart';
-import 'package:fooderlich/api/mock_fooderlich_service.dart';
+import '../components/components.dart';
+import '../api/mock_fooderlich_service.dart';
 
 class ExploreScreen extends StatelessWidget {
   ExploreScreen({Key? key}) : super(key: key);
@@ -31,11 +31,7 @@ class ExploreScreen extends StatelessWidget {
               // Add a 16-point vertical space so the lists aren’t too close
               //to each other
               const SizedBox(height: 16),
-              // TODO: replace this with friends post
-              Container(
-                height: 80,
-                color: Colors.green,
-              )
+              FriendPostListView(friendPost: snapshot.data?.friendPosts ?? []),
             ],
           );
         } else {

@@ -2,9 +2,9 @@ import 'components.dart';
 import '../models/models.dart';
 import 'package:flutter/material.dart';
 
-class FriendsPostTitle extends StatelessWidget {
+class FriendPostTitle extends StatelessWidget {
   final Post post;
-  const FriendsPostTitle({super.key, required this.post});
+  FriendPostTitle({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
