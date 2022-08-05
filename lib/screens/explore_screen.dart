@@ -19,7 +19,6 @@ class ExploreScreen extends StatelessWidget {
           // When the future is complete, return the primary ListView. This
           // holds an explicit list of children. In this scenario,
           // the primary ListView will hold the other two ListViews as children
-          // TODO: Replace this with TodayRecipeListView
           return ListView(
             // Set the scroll direction to vertical, although that’s the
             // default value
@@ -30,7 +29,7 @@ class ExploreScreen extends StatelessWidget {
               TodayRecipeListView(recipes: snapshot.data?.todayRecipes ?? []),
               // Add a 16-point vertical space so the lists aren’t too close
               //to each other
-              const SizedBox(height: 16),
+              const SizedBox(height: 5),
               FriendPostListView(friendPost: snapshot.data?.friendPosts ?? []),
             ],
           );

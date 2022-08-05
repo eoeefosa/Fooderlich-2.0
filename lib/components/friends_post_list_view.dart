@@ -25,20 +25,8 @@ class FriendPostListView extends StatelessWidget {
           // Create the Text widget header
           Text(
             'Social Chefs ! ',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline6,
           ),
-          // Apply a spacing of 16 points vertically
-          const SizedBox(height: 16),
-          // TODO Add PostLIstView here
-          ListView.separated(
-              itemCount: friendPost.length,
-              itemBuilder: (context, index) {
-                final post = friendPost[index];
-                return FriendPostTitle(post: post);
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(height: 16);
-              }),
           // create ListView.separated to display the posts
           // listView separated has 2 indexWidgetBuilder callbsacks
           ListView.separated(
@@ -59,11 +47,9 @@ class FriendPostListView extends StatelessWidget {
             }),
             // for every item in the list create a sized box of 16 points
             separatorBuilder: ((context, index) {
-              return const SizedBox(height: 16);
+              return const SizedBox(height: 9);
             }),
           ),
-          // Leave some padding at the end of the list
-          const SizedBox(height: 16),
         ],
       ),
     );
