@@ -7,3 +7,4 @@ export 'today_recipe_list_view.dart';
 export 'friends_post_title.dart';
 export 'friends_post_list_view.dart';
 export 'recipe_thumbnail.dart';
+export 'recipes_grid_view.dart';
