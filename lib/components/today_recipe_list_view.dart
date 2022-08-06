@@ -7,8 +7,7 @@ import 'package:fooderlich/models/models.dart';
 class TodayRecipeListView extends StatelessWidget {
   // TodayRecipeListView needs a list of recipes to display.
   final List<ExploreRecipe>? recipes;
-  const TodayRecipeListView({Key? key, required this.recipes})
-      : super(key: key);
+  const TodayRecipeListView({super.key, required this.recipes});
   @override
   Widget build(BuildContext context) {
     // Within build(), start by applying some padding.
@@ -19,8 +18,10 @@ class TodayRecipeListView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 // In the column, add a Text. This is the header for the Recipes of the Day
-          Text('Recipes of the Day " ',
-              style: Theme.of(context).textTheme.headline1),
+          Text(
+            'Recipes of the Day " ',
+            style: Theme.of(context).textTheme.headline1,
+          ),
           // Add a 16-point-tall SizedBox, to supply some padding
           const SizedBox(height: 16),
           // 7
