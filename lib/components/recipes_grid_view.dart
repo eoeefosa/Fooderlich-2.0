@@ -4,10 +4,9 @@ import 'components.dart';
 
 class RecipeGridView extends StatelessWidget {
   // a list of recipes to display in the grid
-  final List<SimpleRecipe> recipes;
 
   const RecipeGridView({super.key, required this.recipes});
-
+  final List<SimpleRecipe> recipes;
   @override
   Widget build(BuildContext context) {
     // apply 16 point padding to the left,right and top
@@ -16,6 +15,7 @@ class RecipeGridView extends StatelessWidget {
       // create a GridView.builder which displays only the items visible
       // onscreen
       child: GridView.builder(
+        scrollDirection: Axis.vertical,
         // tell the grid view how many items will be in the grid
         itemCount: recipes.length,
         // add sliverGridDelegateWithFixedCrossAxisCount and set

@@ -4,9 +4,9 @@ import '../models/models.dart';
 import '../api/mock_fooderlich_service.dart';
 
 class RecipeScreens extends StatelessWidget {
+  RecipeScreens({super.key});
   // create a mock service
   final ExplorerSevice = MockFooderlichService();
-  RecipeScreens({super.key});
 
   @override
   Widget build(BuildContext context) {
