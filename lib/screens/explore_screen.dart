@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/components.dart';
 import '../api/mock_fooderlich_service.dart';
-import 'package:fooderlich/models/models.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({Key? key}) : super(key: key);
