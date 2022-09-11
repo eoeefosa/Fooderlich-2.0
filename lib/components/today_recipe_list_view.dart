@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // Import the barrel files, component.dart and models.dart, so you can use data
 // models and UI components.
 import 'components.dart';
-import 'package:fooderlich/models/models.dart';
+import '../models/models.dart';
 
 class TodayRecipeListView extends StatelessWidget {
   // TodayRecipeListView needs a list of recipes to display.

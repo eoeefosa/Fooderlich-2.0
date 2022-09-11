@@ -14,7 +14,9 @@ class RecipeGridView extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
       // create a GridView.builder which displays only the items visible
       // onscreen
-      child: GridView.builder(
+      child:
+          // ScrollController()
+          GridView.builder(
         scrollDirection: Axis.vertical,
         // tell the grid view how many items will be in the grid
         itemCount: recipes.length,
