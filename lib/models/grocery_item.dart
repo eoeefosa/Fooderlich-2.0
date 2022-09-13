@@ -3,7 +3,7 @@ import 'package:flutter/painting.dart';
 enum Importance { low, meduim, high }
 
 class GroceryItem {
-  final String id;
+  final String? id;
   final String name;
   final Importance importance;
   final Color color;
@@ -11,7 +11,7 @@ class GroceryItem {
   final DateTime date;
   final bool isComplete;
   GroceryItem({
-    required this.id,
+    this.id,
     required this.name,
     required this.importance,
     required this.color,

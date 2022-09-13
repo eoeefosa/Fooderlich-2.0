@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'empty_grocery_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:fooderlich/models/models.dart';
+import '../models/models.dart';
 
 import 'grocery_item_screen.dart';
 
