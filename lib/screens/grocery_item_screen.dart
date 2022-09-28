@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:fooderlich/components/grocery_tile.dart';
+import '../components/grocery_tile.dart';
 
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
-import 'package:fooderlich/models/models.dart';
+import '../models/models.dart';
 
 class GroceryItemScreen extends StatefulWidget {
   final Function(GroceryItem)? onCreate;
@@ -17,7 +17,7 @@ class GroceryItemScreen extends StatefulWidget {
 
   const GroceryItemScreen({
     super.key,
-    required this.onCreate,
+    this.onCreate,
     this.onUpdate,
     this.originalItem,
   }) : isUpdating = (originalItem != null);
@@ -35,9 +35,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   // _importance stores the importance level
   Importance _importance = Importance.low;
   // _dueDate stores the current date and time.
-  DateTime? _dueDate = DateTime.now();
+  DateTime _dueDate = DateTime.now();
   // . _timeOfDay stores the current time
-  TimeOfDay? _timeOfDay = TimeOfDay.now();
+  TimeOfDay _timeOfDay = TimeOfDay.now();
   // _currentColor stores the color label.
   Color _currentColor = Colors.green;
   // _currentSliderValue stores the quantity of an item.
@@ -75,7 +75,6 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO12: ADD GroceryitemScreen scaffold
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -83,17 +82,17 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             icon: const Icon(Icons.check),
             onPressed: () {
               final groceryItem = GroceryItem(
-                id: widget.originalItem?.id,
+                id: widget.originalItem?.id ?? const Uuid().v1(),
                 name: _nameController.text,
                 importance: _importance,
                 color: _currentColor,
                 quantity: _currentSliderValue,
                 date: DateTime(
-                  _dueDate!.year,
-                  _dueDate!.month,
-                  _dueDate!.day,
-                  _timeOfDay!.hour,
-                  _timeOfDay!.minute,
+                  _dueDate.year,
+                  _dueDate.month,
+                  _dueDate.day,
+                  _timeOfDay.hour,
+                  _timeOfDay.minute,
                 ),
               );
               if (widget.isUpdating) {
@@ -111,7 +110,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
             buildNameField(),
@@ -128,11 +127,11 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               importance: _importance,
               color: _currentColor,
               date: DateTime(
-                _dueDate!.year,
-                _dueDate!.month,
-                _dueDate!.day,
-                _timeOfDay!.hour,
-                _timeOfDay!.minute,
+                _dueDate.year,
+                _dueDate.month,
+                _dueDate.day,
+                _timeOfDay.hour,
+                _timeOfDay.minute,
               ),
               id: '',
               quantity: _currentSliderValue,
@@ -253,10 +252,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             )
           ],
         ),
-        if (_dueDate != null)
-          Text(
-            '${DateFormat('yyyy-MM-dd').format(_dueDate!)}',
-          )
+        Text(
+          '${DateFormat('yyyy-MM-dd').format(_dueDate)}',
+        )
       ],
     );
   }
@@ -288,10 +286,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             )
           ],
         ),
-        if (_timeOfDay != null)
-          Text(
-            '${_timeOfDay!.format(context)}',
-          ),
+        Text(
+          '${_timeOfDay.format(context)}',
+        ),
       ],
     );
   }

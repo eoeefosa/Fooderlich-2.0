@@ -13,19 +13,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
-
   static List<Widget> pages = <Widget>[
-    ExploreScreen(),
+    const ExploreScreen(),
     RecipeScreens(),
-    GroceryScreen(),
+    const GroceryScreen(),
   ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +33,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           // display the correct page widget based on the current tab index
-          body: pages[tabManager.selectedTab],
+          body: IndexedStack(index: tabManager.selectedTab, children: pages),
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Theme.of(context)
                 //

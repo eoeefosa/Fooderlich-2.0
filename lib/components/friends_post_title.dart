@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class FriendPostTitle extends StatelessWidget {
   final Post post;
-  FriendPostTitle({super.key, required this.post});
+  const FriendPostTitle({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {

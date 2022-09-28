@@ -15,6 +15,9 @@ dependencies:
   flutter_colorpicker: ^1.0.3
   intl: ^0.17.0
   uuid: ^3.0.6
+  smooth_page_indicator: ^1.0.0+2
+  webview_flutter: ^3.0.4
+  flutter_lints: ^2.0.1
 
 
 dev_dependencies:
