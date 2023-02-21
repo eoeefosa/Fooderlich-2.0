@@ -1,6 +1,5 @@
 ﻿### Fooderlich-2.0
-Learning from Flutter apprentice
-a social recipe app for android and ios
+A social recipe app for food bringing together a community of food lovers to share and discover new recipes. With features like recipe sharing, commenting, and liking, it's the perfect platform for connecting with others and finding culinary inspiration 
 
 
 
